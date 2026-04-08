@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+main {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filter-group label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555;
+}
+
+select {
+    background: #141414;
+    border: 1px solid #222;
+    color: #ccc;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #444;
+}
+
+/* Table */
+.table-wrap {
+    overflow-x: auto;
+    border: 1px solid #1a1a1a;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+th {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555;
+    border-bottom: 1px solid #1a1a1a;
+    white-space: nowrap;
+}
+
+td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #111;
+    white-space: nowrap;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #111;
+}
+
+/* Provider colors */
+.provider-anthropic { color: #d4a373; }
+.provider-openai { color: #74b9ff; }
+.provider-google { color: #81c784; }
+.provider-xai { color: #b39ddb; }
+
+.score {
+    font-variant-numeric: tabular-nums;
+}
+
+.price {
+    font-variant-numeric: tabular-nums;
+    font-family: "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8rem;
+}
+
+.context {
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Meta */
+.meta {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #444;
+}
+
+/* Footer */
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #444;
+    border-top: 1px solid #111;
+}
+
+footer code {
+    background: #141414;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #888;
+}

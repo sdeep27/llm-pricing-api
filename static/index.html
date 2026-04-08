@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Pricing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>LLM Pricing Comparison</h1>
+        <p class="subtitle">Anthropic &middot; OpenAI &middot; Google &middot; xAI</p>
+    </header>
+
+    <main>
+        <div class="controls">
+            <div class="filter-group">
+                <label for="provider-filter">Provider</label>
+                <select id="provider-filter">
+                    <option value="">All</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="google">Google</option>
+                    <option value="xai">xAI</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-by">Sort by</label>
+                <select id="sort-by">
+                    <option value="intelligence">Intelligence</option>
+                    <option value="input_price">Input Price</option>
+                    <option value="output_price">Output Price</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-order">Order</label>
+                <select id="sort-order">
+                    <option value="desc">High → Low</option>
+                    <option value="asc">Low → High</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="table-wrap">
+            <table id="models-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Intelligence</th>
+                        <th>Input $/M</th>
+                        <th>Output $/M</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody id="models-body"></tbody>
+            </table>
+        </div>
+
+        <p class="meta" id="meta-info"></p>
+    </main>
+
+    <footer>
+        <p>API: <code>/api/models</code> &middot; <code>/api/meta</code></p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

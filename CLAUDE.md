@@ -1,0 +1,9 @@
+- Simple app that organizes the prices for the four major LLM provider labs (Anthropic, OpenAI, Gemini, xAI) in simple web front end but also provides an accessible json api that agents and other services can use (within reason)
+- Uses the following URLs as a source of truth for pricing:
+    - https://platform.claude.com/docs/en/about-claude/pricing
+    - https://developers.openai.com/api/docs/pricing
+    - https://ai.google.dev/gemini-api/docs/pricing
+    - https://docs.x.ai/developers/models
+- Organizes models by intelligence ranking by default. Uses the following for source of truth for ranking:
+    - https://llm-stats.com/
+- Keep to_do.md updated, even if todos are given via CLI rather than through the markdown

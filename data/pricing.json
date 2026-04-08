@@ -1,0 +1,183 @@
+{
+  "last_updated": "2026-04-08",
+  "price_unit": "per_million_tokens",
+  "sources": {
+    "pricing": {
+      "anthropic": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "openai": "https://developers.openai.com/api/docs/pricing",
+      "google": "https://ai.google.dev/gemini-api/docs/pricing",
+      "xai": "https://docs.x.ai/developers/models"
+    },
+    "rankings": "https://artificialanalysis.ai/leaderboards/models"
+  },
+  "models": [
+    {
+      "name": "Gemini 3.1 Pro Preview",
+      "provider": "google",
+      "intelligence_score": 57,
+      "input_price": 2.00,
+      "output_price": 12.00,
+      "context_window": 1000000
+    },
+    {
+      "name": "GPT-5.4",
+      "provider": "openai",
+      "intelligence_score": 57,
+      "input_price": 2.50,
+      "output_price": 15.00,
+      "context_window": null
+    },
+    {
+      "name": "GPT-5.3 Codex",
+      "provider": "openai",
+      "intelligence_score": 54,
+      "input_price": 1.75,
+      "output_price": 14.00,
+      "context_window": null
+    },
+    {
+      "name": "Claude Opus 4.6",
+      "provider": "anthropic",
+      "intelligence_score": 53,
+      "input_price": 5.00,
+      "output_price": 25.00,
+      "context_window": 1000000
+    },
+    {
+      "name": "Claude Sonnet 4.6",
+      "provider": "anthropic",
+      "intelligence_score": 52,
+      "input_price": 3.00,
+      "output_price": 15.00,
+      "context_window": 1000000
+    },
+    {
+      "name": "Grok 4.20",
+      "provider": "xai",
+      "intelligence_score": 49,
+      "input_price": 2.00,
+      "output_price": 6.00,
+      "context_window": 2000000
+    },
+    {
+      "name": "GPT-5.4 Mini",
+      "provider": "openai",
+      "intelligence_score": 48,
+      "input_price": 0.75,
+      "output_price": 4.50,
+      "context_window": null
+    },
+    {
+      "name": "Claude Opus 4.5",
+      "provider": "anthropic",
+      "intelligence_score": 47,
+      "input_price": 5.00,
+      "output_price": 25.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Gemini 3 Flash Preview",
+      "provider": "google",
+      "intelligence_score": 46,
+      "input_price": 0.50,
+      "output_price": 3.00,
+      "context_window": 1000000
+    },
+    {
+      "name": "Gemini 2.5 Pro",
+      "provider": "google",
+      "intelligence_score": 45,
+      "input_price": 1.25,
+      "output_price": 10.00,
+      "context_window": 1000000
+    },
+    {
+      "name": "Claude Sonnet 4.5",
+      "provider": "anthropic",
+      "intelligence_score": 44,
+      "input_price": 3.00,
+      "output_price": 15.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Claude Sonnet 4",
+      "provider": "anthropic",
+      "intelligence_score": 42,
+      "input_price": 3.00,
+      "output_price": 15.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Claude Opus 4.1",
+      "provider": "anthropic",
+      "intelligence_score": 41,
+      "input_price": 15.00,
+      "output_price": 75.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Grok 4.1 Fast",
+      "provider": "xai",
+      "intelligence_score": 39,
+      "input_price": 0.20,
+      "output_price": 0.50,
+      "context_window": 2000000
+    },
+    {
+      "name": "GPT-5.4 Pro",
+      "provider": "openai",
+      "intelligence_score": 38,
+      "input_price": 30.00,
+      "output_price": 180.00,
+      "context_window": null
+    },
+    {
+      "name": "Gemini 2.5 Flash",
+      "provider": "google",
+      "intelligence_score": 35,
+      "input_price": 0.30,
+      "output_price": 2.50,
+      "context_window": 1000000
+    },
+    {
+      "name": "GPT-5.4 Nano",
+      "provider": "openai",
+      "intelligence_score": 30,
+      "input_price": 0.20,
+      "output_price": 1.25,
+      "context_window": null
+    },
+    {
+      "name": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "intelligence_score": 28,
+      "input_price": 1.00,
+      "output_price": 5.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Gemini 2.5 Flash-Lite",
+      "provider": "google",
+      "intelligence_score": 25,
+      "input_price": 0.10,
+      "output_price": 0.40,
+      "context_window": 1000000
+    },
+    {
+      "name": "Claude Haiku 3.5",
+      "provider": "anthropic",
+      "intelligence_score": 22,
+      "input_price": 0.80,
+      "output_price": 4.00,
+      "context_window": 200000
+    },
+    {
+      "name": "Claude Haiku 3",
+      "provider": "anthropic",
+      "intelligence_score": 15,
+      "input_price": 0.25,
+      "output_price": 1.25,
+      "context_window": 200000
+    }
+  ]
+}
