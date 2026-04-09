@@ -10,6 +10,7 @@ dist/
 build/
 .pytest_cache/
 .DS_Store
+.claude/
 llm-pricing-api.service
 llm-pricing-api.nginx
 deploy.sh
