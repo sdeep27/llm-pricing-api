@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08",
+  "last_updated": "2026-04-09",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -17,7 +17,13 @@
       "intelligence_score": 57,
       "input_price": 2.00,
       "output_price": 12.00,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 6.00,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
     },
     {
       "name": "GPT-5.4",
@@ -25,7 +31,13 @@
       "intelligence_score": 57,
       "input_price": 2.50,
       "output_price": 15.00,
-      "context_window": null
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.25,
+      "batch_input_price": 1.25,
+      "batch_output_price": 7.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "GPT-5.3 Codex",
@@ -33,7 +45,13 @@
       "intelligence_score": 54,
       "input_price": 1.75,
       "output_price": 14.00,
-      "context_window": null
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.175,
+      "batch_input_price": null,
+      "batch_output_price": null,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Opus 4.6",
@@ -41,7 +59,13 @@
       "intelligence_score": 53,
       "input_price": 5.00,
       "output_price": 25.00,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 128000,
+      "cache_read_price": 0.50,
+      "batch_input_price": 2.50,
+      "batch_output_price": 12.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Sonnet 4.6",
@@ -49,7 +73,13 @@
       "intelligence_score": 52,
       "input_price": 3.00,
       "output_price": 15.00,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 64000,
+      "cache_read_price": 0.30,
+      "batch_input_price": 1.50,
+      "batch_output_price": 7.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Grok 4.20",
@@ -57,7 +87,13 @@
       "intelligence_score": 49,
       "input_price": 2.00,
       "output_price": 6.00,
-      "context_window": 2000000
+      "context_window": 2000000,
+      "max_output": null,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 3.00,
+      "search_price": 0.005,
+      "search_free_tier": null
     },
     {
       "name": "GPT-5.4 Mini",
@@ -65,7 +101,13 @@
       "intelligence_score": 48,
       "input_price": 0.75,
       "output_price": 4.50,
-      "context_window": null
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.075,
+      "batch_input_price": 0.375,
+      "batch_output_price": 2.25,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Opus 4.5",
@@ -73,7 +115,13 @@
       "intelligence_score": 47,
       "input_price": 5.00,
       "output_price": 25.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 64000,
+      "cache_read_price": 0.50,
+      "batch_input_price": 2.50,
+      "batch_output_price": 12.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Gemini 3 Flash Preview",
@@ -81,7 +129,13 @@
       "intelligence_score": 46,
       "input_price": 0.50,
       "output_price": 3.00,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.05,
+      "batch_input_price": 0.25,
+      "batch_output_price": 1.50,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
     },
     {
       "name": "Gemini 2.5 Pro",
@@ -89,7 +143,13 @@
       "intelligence_score": 45,
       "input_price": 1.25,
       "output_price": 10.00,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.125,
+      "batch_input_price": 0.625,
+      "batch_output_price": 5.00,
+      "search_price": 0.035,
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Claude Sonnet 4.5",
@@ -97,7 +157,13 @@
       "intelligence_score": 44,
       "input_price": 3.00,
       "output_price": 15.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 64000,
+      "cache_read_price": 0.30,
+      "batch_input_price": 1.50,
+      "batch_output_price": 7.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Sonnet 4",
@@ -105,7 +171,13 @@
       "intelligence_score": 42,
       "input_price": 3.00,
       "output_price": 15.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 8192,
+      "cache_read_price": 0.30,
+      "batch_input_price": 1.50,
+      "batch_output_price": 7.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Opus 4.1",
@@ -113,7 +185,13 @@
       "intelligence_score": 41,
       "input_price": 15.00,
       "output_price": 75.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 32000,
+      "cache_read_price": 1.50,
+      "batch_input_price": 7.50,
+      "batch_output_price": 37.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Grok 4.1 Fast",
@@ -121,7 +199,13 @@
       "intelligence_score": 39,
       "input_price": 0.20,
       "output_price": 0.50,
-      "context_window": 2000000
+      "context_window": 2000000,
+      "max_output": null,
+      "cache_read_price": 0.05,
+      "batch_input_price": 0.10,
+      "batch_output_price": 0.25,
+      "search_price": 0.005,
+      "search_free_tier": null
     },
     {
       "name": "GPT-5.4 Pro",
@@ -129,7 +213,13 @@
       "intelligence_score": 38,
       "input_price": 30.00,
       "output_price": 180.00,
-      "context_window": null
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": null,
+      "batch_input_price": 15.00,
+      "batch_output_price": 90.00,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Gemini 2.5 Flash",
@@ -137,7 +227,13 @@
       "intelligence_score": 35,
       "input_price": 0.30,
       "output_price": 2.50,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.03,
+      "batch_input_price": 0.15,
+      "batch_output_price": 1.25,
+      "search_price": 0.035,
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "GPT-5.4 Nano",
@@ -145,7 +241,13 @@
       "intelligence_score": 30,
       "input_price": 0.20,
       "output_price": 1.25,
-      "context_window": null
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.02,
+      "batch_input_price": 0.10,
+      "batch_output_price": 0.625,
+      "search_price": null,
+      "search_free_tier": null
     },
     {
       "name": "Claude Haiku 4.5",
@@ -153,7 +255,13 @@
       "intelligence_score": 28,
       "input_price": 1.00,
       "output_price": 5.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 64000,
+      "cache_read_price": 0.10,
+      "batch_input_price": 0.50,
+      "batch_output_price": 2.50,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Gemini 2.5 Flash-Lite",
@@ -161,7 +269,13 @@
       "intelligence_score": 25,
       "input_price": 0.10,
       "output_price": 0.40,
-      "context_window": 1000000
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.01,
+      "batch_input_price": 0.05,
+      "batch_output_price": 0.20,
+      "search_price": 0.035,
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Claude Haiku 3.5",
@@ -169,7 +283,13 @@
       "intelligence_score": 22,
       "input_price": 0.80,
       "output_price": 4.00,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 8192,
+      "cache_read_price": 0.08,
+      "batch_input_price": 0.40,
+      "batch_output_price": 2.00,
+      "search_price": 0.010,
+      "search_free_tier": null
     },
     {
       "name": "Claude Haiku 3",
@@ -177,7 +297,13 @@
       "intelligence_score": 15,
       "input_price": 0.25,
       "output_price": 1.25,
-      "context_window": 200000
+      "context_window": 200000,
+      "max_output": 4096,
+      "cache_read_price": 0.025,
+      "batch_input_price": 0.125,
+      "batch_output_price": 0.625,
+      "search_price": null,
+      "search_free_tier": null
     }
   ]
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme 5: Light Clean</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f5f7fa;color:#374151;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;font-size:1.05rem}
+header{padding:2rem 1.5rem 1rem;text-align:center}
+h1{font-size:1.75rem;font-weight:600;letter-spacing:-0.02em;color:#111827}
+.subtitle{font-size:1rem;color:#6b7280;margin-top:0.25rem}
+main{flex:1;max-width:960px;width:100%;margin:0 auto;padding:0 1.5rem 2rem}
+.calculator{margin-bottom:1.25rem;padding:1.25rem;background:#ffffff;border:1px solid #e2e6ec;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.calc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.calc-header h2{font-size:1.1rem;font-weight:600;color:#111827}
+.calc-fields{display:flex;gap:1rem;flex-wrap:wrap}
+.calc-field{flex:1;min-width:120px}
+.calc-field label{display:block;font-size:0.8rem;color:#6b7280;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.35rem}
+.calc-field input{width:100%;padding:0.5rem 0.65rem;background:#f9fafb;border:1px solid #d1d5db;border-radius:5px;color:#374151;font-size:1rem;font-family:"SF Mono",Menlo,Monaco,Consolas,monospace}
+.calc-field input:focus{outline:none;border-color:#93a3b8}
+.calc-tokens{margin-top:0.75rem;font-size:0.85rem;color:#6b7280}
+.table-wrap{overflow-x:auto;border:1px solid #e2e6ec;border-radius:8px;background:#ffffff;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+table{width:100%;border-collapse:collapse;font-size:1rem}
+th{text-align:left;padding:0.75rem 1rem;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.06em;color:#6b7280;border-bottom:1px solid #e2e6ec;white-space:nowrap;background:#f9fafb}
+td{padding:0.75rem 1rem;border-bottom:1px solid #f0f2f5;white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#f5f7fa}
+.provider-anthropic{color:#b47030}
+.provider-openai{color:#1a7ab8}
+.provider-google{color:#1a8a40}
+.provider-xai{color:#7040b0}
+.price{font-variant-numeric:tabular-nums;font-family:"SF Mono",Menlo,Monaco,Consolas,monospace;font-size:0.95rem}
+.est-cost{color:#b07818;font-weight:600}
+.context{color:#6b7280;font-size:0.95rem}
+footer{padding:1.5rem;text-align:center;font-size:0.9rem;color:#9ca3af;border-top:1px solid #e2e6ec}
+footer code{background:#f3f4f6;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85rem;color:#4b5563}
+.theme-label{position:fixed;top:1rem;right:1rem;background:#e2e6ec;color:#4b5563;padding:0.5rem 1rem;border-radius:6px;font-size:0.85rem;font-weight:600}
+</style>
+</head>
+<body>
+<div class="theme-label">Theme 5: Light Clean</div>
+<header>
+    <h1>LLM Pricing Comparison</h1>
+    <p class="subtitle">Anthropic &middot; OpenAI &middot; Google &middot; xAI</p>
+</header>
+<main>
+    <div class="calculator">
+        <div class="calc-header"><h2>Cost Estimate</h2></div>
+        <div class="calc-fields">
+            <div class="calc-field"><label>Pages In</label><input type="number" value="3"></div>
+            <div class="calc-field"><label>Pages Out</label><input type="number" value="1"></div>
+            <div class="calc-field"><label>Words In</label><input type="number" value="0"></div>
+            <div class="calc-field"><label>Words Out</label><input type="number" value="0"></div>
+        </div>
+        <p class="calc-tokens">&asymp; 1,995 input tokens &middot; 665 output tokens (1 single-spaced page &asymp; 500 words &asymp; 665 tokens)</p>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead><tr>
+                <th>Intelligence &blacktriangledown;</th><th>Model</th><th>Provider</th><th>Est. Cost</th><th>Input $/M</th><th>Output $/M</th><th>Blended $/M</th><th>Context</th>
+            </tr></thead>
+            <tbody>
+                <tr><td>1</td><td><strong>Gemini 3.1 Pro Preview</strong></td><td class="provider-google">Google</td><td class="price est-cost">$0.0120</td><td class="price">$2.00</td><td class="price">$12.00</td><td class="price">$4.50</td><td class="context">1M</td></tr>
+                <tr><td>2</td><td><strong>GPT-5.4</strong></td><td class="provider-openai">OpenAI</td><td class="price est-cost">$0.0150</td><td class="price">$2.50</td><td class="price">$15.00</td><td class="price">$5.63</td><td class="context">128K</td></tr>
+                <tr><td>3</td><td><strong>GPT-5.3 Codex</strong></td><td class="provider-openai">OpenAI</td><td class="price est-cost">$0.0128</td><td class="price">$1.75</td><td class="price">$14.00</td><td class="price">$4.81</td><td class="context">200K</td></tr>
+                <tr><td>4</td><td><strong>Claude Opus 4.6</strong></td><td class="provider-anthropic">Anthropic</td><td class="price est-cost">$0.0266</td><td class="price">$5.00</td><td class="price">$25.00</td><td class="price">$10.00</td><td class="context">200K</td></tr>
+                <tr><td>5</td><td><strong>Claude Sonnet 4.6</strong></td><td class="provider-anthropic">Anthropic</td><td class="price est-cost">$0.0160</td><td class="price">$3.00</td><td class="price">$15.00</td><td class="price">$6.00</td><td class="context">200K</td></tr>
+                <tr><td>6</td><td><strong>Grok 3</strong></td><td class="provider-xai">xAI</td><td class="price est-cost">$0.0060</td><td class="price">$3.00</td><td class="price">$15.00</td><td class="price">$6.00</td><td class="context">128K</td></tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer><p>API: <code>/api/models</code> &middot; <code>/api/meta</code></p></footer>
+</body>
+</html>
