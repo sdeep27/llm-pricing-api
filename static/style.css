@@ -300,6 +300,20 @@ td.est-cost {
 footer {
     padding: 2rem 1.5rem;
     border-top: 1px solid #e8e2d8;
+    text-align: center;
+    color: #8a7f72;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: #6b6159;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+}
+
+footer a:hover {
+    border-bottom-color: #6b6159;
 }
 
 .api-bar {
