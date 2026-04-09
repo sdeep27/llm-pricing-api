@@ -1,10 +1,8 @@
 # To Dos Remaining
-- Push to origin and verify GitHub repo
-- Integrate Artificial Analysis API for automated rankings (user has API key)
 - Add image/vision input pricing (needs design discussion for cross-provider comparison)
-- Deployment setup for Ubuntu VPS (systemd service, nginx reverse proxy)
 
 # To Dos Completed
+- ~~Integrate Artificial Analysis API for automated rankings (user has API key)~~
 - ~~Ask any open questions and develop initial scaffolding~~
 - ~~Create .gitignore and make first commit to origin~~
 - ~~Explore sources of truth for initial data population~~

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LLM Pricing</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -43,6 +44,11 @@
                         <input type="number" id="words-out" value="0" min="0">
                     </div>
                 </div>
+                <label class="calc-checkbox">
+                    <input type="checkbox" id="thinking-simple" checked>
+                    <span>Include thinking tokens</span>
+                    <span class="calc-hint">(5x output — most models reason by default)</span>
+                </label>
                 <p class="calc-tokens" id="calc-tokens"></p>
             </div>
 
@@ -61,6 +67,11 @@
                         <input type="number" id="tokens-out" value="665" min="0">
                     </div>
                 </div>
+                <label class="calc-checkbox">
+                    <input type="checkbox" id="thinking-advanced" checked>
+                    <span>Include thinking tokens</span>
+                    <span class="calc-hint">(5x output — most models reason by default)</span>
+                </label>
                 <p class="calc-note">Cached tokens use the discounted cache read price (0.1x input)</p>
             </div>
         </div>

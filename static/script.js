@@ -6,6 +6,7 @@ let currentSort = "intelligence";
 let currentOrder = "desc";
 let currentModels = [];
 let advancedMode = false;
+const THINKING_MULTIPLIER = 5;
 
 // Token conversions: single-spaced page ≈ 500 words, ~1.33 tokens per word
 const TOKENS_PER_WORD = 1.33;
@@ -69,10 +70,18 @@ function getCachedTokens() {
   return 0;
 }
 
+function isThinkingEnabled() {
+  const id = advancedMode ? "thinking-advanced" : "thinking-simple";
+  return document.getElementById(id).checked;
+}
+
 function computeCost(model) {
   const inputTokens = getInputTokens();
   const cachedTokens = getCachedTokens();
-  const outputTokens = getOutputTokens();
+  let outputTokens = getOutputTokens();
+  if (isThinkingEnabled()) {
+    outputTokens *= (1 + THINKING_MULTIPLIER);
+  }
   // Cached tokens use cache_read_price instead of input_price
   const uncachedInput = Math.max(0, inputTokens - cachedTokens);
   return (uncachedInput * (model.input_price || 0) / 1_000_000) +
@@ -83,7 +92,11 @@ function computeCost(model) {
 function updateTokenSummary() {
   const el = document.getElementById("calc-tokens");
   if (el) {
-    el.textContent = `\u2248 ${getInputTokens().toLocaleString()} input tokens \u00b7 ${getOutputTokens().toLocaleString()} output tokens (1 single-spaced page \u2248 500 words \u2248 ${TOKENS_PER_PAGE} tokens)`;
+    const outVisible = getOutputTokens();
+    const thinking = isThinkingEnabled();
+    const outTotal = thinking ? outVisible * (1 + THINKING_MULTIPLIER) : outVisible;
+    const thinkingNote = thinking ? ` (incl. ${THINKING_MULTIPLIER}x thinking)` : "";
+    el.textContent = `\u2248 ${getInputTokens().toLocaleString()} input \u00b7 ${outTotal.toLocaleString()} output${thinkingNote} tokens (1 page \u2248 500 words \u2248 ${TOKENS_PER_PAGE} tokens)`;
   }
 }
 
@@ -219,6 +232,16 @@ headers.forEach((th) => {
 // Advanced calculator inputs
 ["tokens-in", "tokens-cached", "tokens-out"].forEach((id) => {
   document.getElementById(id).addEventListener("input", rerender);
+});
+
+// Thinking checkboxes — keep in sync and rerender
+["thinking-simple", "thinking-advanced"].forEach((id) => {
+  document.getElementById(id).addEventListener("change", (e) => {
+    // Sync the other checkbox
+    const otherId = id === "thinking-simple" ? "thinking-advanced" : "thinking-simple";
+    document.getElementById(otherId).checked = e.target.checked;
+    rerender();
+  });
 });
 
 // Toggle button
