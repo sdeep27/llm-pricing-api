@@ -17,3 +17,4 @@
 - ~~Add max output tokens column~~
 - ~~Add cached input pricing column + enable cached tokens in calculator~~
 - ~~Add batch input/output pricing columns~~
+- ~~Pricing audit 2026-04-14: fixed Haiku 3 cache price, added 3 new models, updated GPT-5.4 Mini score~~

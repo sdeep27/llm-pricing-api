@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09",
+  "last_updated": "2026-04-14",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -98,7 +98,7 @@
     {
       "name": "GPT-5.4 Mini",
       "provider": "openai",
-      "intelligence_score": 48,
+      "intelligence_score": 49,
       "input_price": 0.75,
       "output_price": 4.50,
       "context_window": null,
@@ -299,10 +299,52 @@
       "output_price": 1.25,
       "context_window": 200000,
       "max_output": 4096,
-      "cache_read_price": 0.025,
+      "cache_read_price": 0.03,
       "batch_input_price": 0.125,
       "batch_output_price": 0.625,
       "search_price": null,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Opus 4",
+      "provider": "anthropic",
+      "intelligence_score": null,
+      "input_price": 15.00,
+      "output_price": 75.00,
+      "context_window": 200000,
+      "max_output": 32000,
+      "cache_read_price": 1.50,
+      "batch_input_price": 7.50,
+      "batch_output_price": 37.50,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "Gemini 3.1 Flash-Lite Preview",
+      "provider": "google",
+      "intelligence_score": null,
+      "input_price": 0.25,
+      "output_price": 1.50,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.025,
+      "batch_input_price": 0.125,
+      "batch_output_price": 0.75,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
+    },
+    {
+      "name": "Grok 4.20 Multi-Agent",
+      "provider": "xai",
+      "intelligence_score": null,
+      "input_price": 2.00,
+      "output_price": 6.00,
+      "context_window": 2000000,
+      "max_output": null,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 3.00,
+      "search_price": 0.005,
       "search_free_tier": null
     }
   ]
