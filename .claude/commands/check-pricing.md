@@ -1,6 +1,6 @@
 ---
-description: Audit every source in data/sources.md against data/pricing.json. With --apply, commits README freshness updates directly and opens a PR for pricing changes.
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash, WebFetch, mcp__github__create_pull_request, mcp__github__add_issue_comment, mcp__github__list_issues, mcp__github__issue_write
+description: Audit every source in data/sources.md against data/pricing.json. With --apply, commits and pushes changes directly to main.
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash, WebFetch
 ---
 
 # Pricing & Model Freshness Audit
@@ -41,23 +41,19 @@ Audit this project's pricing data for staleness against provider source pages.
 7. Branch on outcome:
 
    **If no pricing changes** (only the README was touched):
-   - `git checkout main && git pull origin main` (rebase README change onto latest main if needed).
-   - Commit with message `chore: pricing audit YYYY-MM-DD (no changes)`.
-   - `git push -u origin main`.
-   - Do NOT open a PR. Do NOT open an issue.
+   - Commit on `main` with message `chore: pricing audit YYYY-MM-DD (no changes)`.
+   - `git push origin main`.
 
    **If pricing.json changed** (and `--apply` was passed):
    - Also bump `last_updated` in `pricing.json` to today's date.
-   - Create branch `claude/pricing-audit-YYYYMMDD`.
-   - Commit `README.md` and `data/pricing.json` with message `chore: pricing audit YYYY-MM-DD`.
-   - Push and open a PR via `mcp__github__create_pull_request` against `main`. Title: `Pricing audit YYYY-MM-DD`. Body: full contents of `/tmp/pricing-audit.md`.
-   - Do NOT merge.
+   - Commit all changed files on `main` with message `chore: pricing audit YYYY-MM-DD`.
+   - `git push origin main`.
 
    **If `--apply` was NOT passed:**
    - Skip all git/PR steps. Leave files untouched except printing the report to stdout.
 
    **If there were fetch failures only** (no content changes found, but some sources unreachable):
-   - Still do the no-change path (commit README freshness to main) AND append a comment to any open issue titled `Pricing audit: fetch failures` (create one if none exists) listing which URLs failed. This avoids PR spam for transient Cloudflare/network blips while still surfacing repeated failures.
+   - Still do the no-change path (commit README freshness to main, push).
 
 8. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
 
