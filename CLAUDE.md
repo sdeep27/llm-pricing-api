@@ -2,3 +2,4 @@
 - All source URLs, pricing notes, and scraping gotchas live in `data/sources.md`. Update that file when adding new data sources or discovering new quirks.
 - Organizes models by intelligence ranking by default
 - Keep to_do.md updated, even if todos are given via CLI rather than through the markdown
+- Deployed on a VPS — commits to main auto-deploy via a post-commit git hook that restarts the systemd service. No CI/CD pipeline; just push and it's live.
