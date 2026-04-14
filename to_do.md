@@ -1,5 +1,6 @@
 # To Dos Remaining
 - Add image/vision input pricing (needs design discussion for cross-provider comparison)
+- Set up the scheduled `/check-pricing --apply` task on claude.ai/code (every 3 days) — see `.claude/SCHEDULED_TASK.md`
 
 # To Dos Completed
 - ~~Integrate Artificial Analysis API for automated rankings (user has API key)~~

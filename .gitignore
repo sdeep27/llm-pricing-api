@@ -10,7 +10,9 @@ dist/
 build/
 .pytest_cache/
 .DS_Store
-.claude/
+.claude/*
+!.claude/commands/
+!.claude/SCHEDULED_TASK.md
 llm-pricing-api.service
 llm-pricing-api.nginx
 deploy.sh
