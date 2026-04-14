@@ -38,7 +38,7 @@ Audit this project's pricing data for staleness against provider source pages.
 
 6. Always update `README.md` to set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
 
-7. Always bump `last_updated` in `pricing.json` to today's date when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site.
+7. Always bump `last_updated` in `pricing.json` to the current UTC time as an ISO 8601 timestamp (e.g. `"2026-04-14T14:00:00Z"`) when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site, which the browser converts to the viewer's local timezone.
 
 8. Branch on outcome:
 
