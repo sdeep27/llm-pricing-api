@@ -38,14 +38,15 @@ Audit this project's pricing data for staleness against provider source pages.
 
 6. Always update `README.md` to set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
 
-7. Branch on outcome:
+7. Always bump `last_updated` in `pricing.json` to today's date when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site.
 
-   **If no pricing changes** (only the README was touched):
+8. Branch on outcome:
+
+   **If no pricing changes** (only the README and last_updated were touched):
    - Commit on `main` with message `chore: pricing audit YYYY-MM-DD (no changes)`.
    - `git push origin main`.
 
-   **If pricing.json changed** (and `--apply` was passed):
-   - Also bump `last_updated` in `pricing.json` to today's date.
+   **If pricing.json had actual price/model changes** (and `--apply` was passed):
    - Commit all changed files on `main` with message `chore: pricing audit YYYY-MM-DD`.
    - `git push origin main`.
 
@@ -55,16 +56,15 @@ Audit this project's pricing data for staleness against provider source pages.
    **If there were fetch failures only** (no content changes found, but some sources unreachable):
    - Still do the no-change path (commit README freshness to main, push).
 
-8. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
+9. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
 
-9. Print the report to stdout at the end.
+10. Print the report to stdout at the end.
 
 ## Guidance
 
 - Be conservative. Ambiguous page layout → "Manual Review", not a guess.
 - Respect the gotchas in `data/sources.md`.
 - Use exact provider-published model names.
-- Do not touch `last_updated` in `pricing.json` unless pricing actually changed.
-- Keep the report terse — it becomes a PR body.
+- Keep the report terse.
 
 Arguments passed to this command: $ARGUMENTS

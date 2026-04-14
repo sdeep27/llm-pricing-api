@@ -46,6 +46,12 @@ h1 {
     text-decoration: underline;
 }
 
+.last-updated {
+    font-size: 0.75rem;
+    color: #a89e8e;
+    margin-top: 0.15rem;
+}
+
 main {
     flex: 1;
     max-width: 960px;

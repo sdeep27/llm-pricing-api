@@ -207,6 +207,8 @@ async function fetchMeta() {
   const res = await fetch("/api/meta");
   const data = await res.json();
   metaInfo.textContent = `${data.model_count} models \u00b7 Prices ${data.price_unit.replace(/_/g, " ")} \u00b7 Blended = 3:1 input:output \u00b7 Updated ${data.last_updated}`;
+  const lastUpdated = document.getElementById("last-updated");
+  if (lastUpdated) lastUpdated.textContent = `Pricing last verified: ${data.last_updated}`;
 }
 
 // --- Event Listeners ---
