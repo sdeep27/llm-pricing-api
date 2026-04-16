@@ -18,3 +18,4 @@
 - ~~Add batch input/output pricing columns~~
 - ~~Pricing audit 2026-04-14: fixed Haiku 3 cache price, added 3 new models, updated GPT-5.4 Mini score~~
 - ~~Set up scheduled `/check-pricing --apply` via VPS cron (every 3 days at 2pm UTC)~~
+- ~~Pricing audit 2026-04-16: filled in GPT-5.3 Codex batch pricing ($0.875/$7.00); no other changes~~

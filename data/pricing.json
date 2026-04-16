@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-14T17:31:00Z",
+  "last_updated": "2026-04-16T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -48,8 +48,8 @@
       "context_window": null,
       "max_output": 128000,
       "cache_read_price": 0.175,
-      "batch_input_price": null,
-      "batch_output_price": null,
+      "batch_input_price": 0.875,
+      "batch_output_price": 7.00,
       "search_price": 0.010,
       "search_free_tier": null
     },
