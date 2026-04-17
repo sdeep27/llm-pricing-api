@@ -198,6 +198,7 @@
     {
       "name": "Claude Sonnet 4",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": 42,
       "input_price": 3.00,
       "output_price": 15.00,
@@ -352,6 +353,7 @@
     {
       "name": "Claude Opus 4",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": null,
       "input_price": 15.00,
       "output_price": 75.00,

@@ -169,9 +169,9 @@ function renderTable(models) {
   tbody.innerHTML = sorted
     .map(
       (m, i) => `
-    <tr>
+    <tr${m.deprecated ? ' class="deprecated"' : ''}>
       <td class="score">${i + 1}</td>
-      <td><strong>${m.name}</strong></td>
+      <td><strong>${m.name}</strong>${m.deprecated ? '<span class="dep-badge">deprecated</span>' : ''}</td>
       <td class="provider-${m.provider}">${providerLabels[m.provider]}</td>
       <td class="price est-cost">${formatEstCost(computeCost(m))}</td>
       <td class="price">${formatPrice(m.input_price)}</td>

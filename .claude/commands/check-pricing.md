@@ -27,6 +27,7 @@ Audit this project's pricing data for staleness against provider source pages.
    - **Price mismatch** — any stored non-null field differs from the source.
    - **`null` → value** — we had no value, source now publishes one. Treat as a fill-in, not a mismatch.
    - **Provisional score resolved** — if a model has `"intelligence_score_provisional": true` and Artificial Analysis now publishes a real score, replace the score and remove the provisional flag.
+   - **Newly deprecated model** — if a provider's page now marks a model as deprecated (e.g. "(deprecated)" label) and the model in `pricing.json` does not yet have `"deprecated": true`, add that flag.
    - **Removed/renamed model** — in `pricing.json` but not on the page. Flag for review; never auto-delete.
 
 5. **Provisional intelligence scores** — When adding a new model and Artificial Analysis does not yet list it:
