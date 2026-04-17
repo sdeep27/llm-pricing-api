@@ -26,9 +26,17 @@ Audit this project's pricing data for staleness against provider source pages.
    - **Missing model** — on the provider page but not in `pricing.json`. Capture a full proposed row.
    - **Price mismatch** — any stored non-null field differs from the source.
    - **`null` → value** — we had no value, source now publishes one. Treat as a fill-in, not a mismatch.
+   - **Provisional score resolved** — if a model has `"intelligence_score_provisional": true` and Artificial Analysis now publishes a real score, replace the score and remove the provisional flag.
    - **Removed/renamed model** — in `pricing.json` but not on the page. Flag for review; never auto-delete.
 
-5. Build a report at `/tmp/pricing-audit.md` with:
+5. **Provisional intelligence scores** — When adding a new model and Artificial Analysis does not yet list it:
+   - Find the **nearest predecessor** in the same model line (e.g. for "Claude Sonnet 5", the predecessor is "Claude Sonnet 4.6"; for "Grok 4.20 Multi-Agent", it's "Grok 4.20"; for "Gemini 3.1 Flash-Lite Preview", it's "Gemini 2.5 Flash-Lite").
+   - Set `intelligence_score` to the predecessor's score **+ 1**, so the new model sorts just above it.
+   - Add `"intelligence_score_provisional": true` to the model object.
+   - If no clear predecessor exists (entirely new model line), set `intelligence_score` to `null` — do not guess.
+   - Report provisional scores in the audit under a `## Provisional Scores` section.
+
+6. Build a report at `/tmp/pricing-audit.md` with:
    - Header line with today's date.
    - `## Summary` — counts per category (new models, price changes, removals, fetch failures).
    - `## New Models` — table of model, provider, proposed pricing row, source URL.
@@ -36,11 +44,11 @@ Audit this project's pricing data for staleness against provider source pages.
    - `## Fetch Failures / Manual Review` — anything unverifiable.
    - `## Approx token usage` — a short note like "~N input tokens of source pages fetched; see scheduled-task run page for exact usage."
 
-6. Always update `README.md` to set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
+7. Always update `README.md` to set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
 
-7. Always bump `last_updated` in `pricing.json` to the current UTC time as an ISO 8601 timestamp (e.g. `"2026-04-14T14:00:00Z"`) when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site, which the browser converts to the viewer's local timezone.
+8. Always bump `last_updated` in `pricing.json` to the current UTC time as an ISO 8601 timestamp (e.g. `"2026-04-14T14:00:00Z"`) when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site, which the browser converts to the viewer's local timezone.
 
-8. Branch on outcome:
+9. Branch on outcome:
 
    **If no pricing changes** (only the README and last_updated were touched):
    - Commit on `main` with message `chore: pricing audit YYYY-MM-DD (no changes)`.
@@ -56,9 +64,9 @@ Audit this project's pricing data for staleness against provider source pages.
    **If there were fetch failures only** (no content changes found, but some sources unreachable):
    - Still do the no-change path (commit README freshness to main, push).
 
-9. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
+10. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
 
-10. Print the report to stdout at the end.
+11. Print the report to stdout at the end.
 
 ## Guidance
 

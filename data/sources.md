@@ -26,7 +26,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 **Anthropic** -- $10/1K searches ($0.010/search)
 - No free tier
 - Tool versions: `web_search_20260209` (with dynamic filtering, requires code execution tool) and `web_search_20250305` (basic)
-- `web_search_20260209` dynamic filtering supported on: Claude Mythos Preview, Opus 4.6, Sonnet 4.6
+- `web_search_20260209` dynamic filtering supported on: Claude Mythos Preview, Opus 4.7, Opus 4.6, Sonnet 4.6
 - Basic web search (`web_search_20250305`) is GA across all recent Claude models
 - Older models (Haiku 3) likely don't support it; Anthropic doesn't publish an explicit exclusion list
 - Search content tokens count as input tokens and are billed at model rates
@@ -77,7 +77,7 @@ All four providers offer batch processing at roughly 50% off standard rates.
 
 ## Max Output Tokens
 
-- **Anthropic**: Varies significantly (4K for Haiku 3 up to 128K for Opus 4.6). Check model overview page.
+- **Anthropic**: Varies significantly (4K for Haiku 3 up to 128K for Opus 4.7/4.6). Check model overview page.
 - **OpenAI**: Consistently 128K across GPT-5.4 family.
 - **Google**: Consistently ~65K (65,536) across all Gemini models.
 - **xAI**: Not explicitly published. Stored as null in pricing.json.
@@ -89,6 +89,10 @@ All four providers offer batch processing at roughly 50% off standard rates.
 | Artificial Analysis | https://artificialanalysis.ai/leaderboards/models |
 
 Previously used https://llm-stats.com/ but switched to Artificial Analysis.
+
+### Provisional scores
+
+New models often appear on provider pricing pages before Artificial Analysis ranks them. When this happens, we assign a **provisional score** = predecessor's score + 1 (so the new model sorts just above its predecessor). The model gets an `"intelligence_score_provisional": true` flag in `pricing.json`. Each audit re-checks provisional models against Artificial Analysis and replaces the score when a real one is published.
 
 ## Scraping Gotchas
 
@@ -116,4 +120,6 @@ Notes for future agents updating this data:
 
 11. **xAI max output tokens**: xAI docs don't publish explicit max output limits. The models list a 2M context window but no output cap. Stored as null.
 
-12. **Anthropic max output varies by model generation**: Unlike OpenAI (consistent 128K) or Google (consistent 65K), Anthropic's max output ranges from 4K (Haiku 3) to 128K (Opus 4.6). Always check per-model.
+12. **Anthropic max output varies by model generation**: Unlike OpenAI (consistent 128K) or Google (consistent 65K), Anthropic's max output ranges from 4K (Haiku 3) to 128K (Opus 4.7/4.6). Always check per-model.
+
+13. **Opus 4.7 tokenizer change**: Opus 4.7 uses a new tokenizer that may use up to 35% more tokens for the same text compared to previous models. This affects effective cost comparisons.
