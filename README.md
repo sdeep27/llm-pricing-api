@@ -14,6 +14,6 @@ Returns JSON with current pricing for all tracked models. Point your agents here
 
 ## Data freshness
 
-Last audited: 2026-04-17
+Last audited: 2026-04-19
 
 A scheduled Claude Code task re-audits every provider source page every 3 days. When it finds price drift or new models, it commits and pushes directly to main; when everything still matches, it just bumps the date above so you know the check ran.
