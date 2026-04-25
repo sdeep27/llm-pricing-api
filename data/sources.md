@@ -71,7 +71,7 @@ All four providers use the same 0.1x multiplier for cache reads (90% discount on
 All four providers offer batch processing at roughly 50% off standard rates.
 
 - **Anthropic**: Exactly 50% off input and output. All models supported.
-- **OpenAI**: Exactly 50% off. GPT-5.3 Codex batch pricing not explicitly listed on pricing page.
+- **OpenAI**: Exactly 50% off for the GPT-5.4 family. GPT-5.3 Codex is an exception — its batch pricing is now explicitly listed on the pricing page and equals standard pricing (no batch discount).
 - **Google**: Approximately 50% off. Some models have tiered batch pricing (different rates for prompts >200K tokens vs <=200K). We store the <=200K rate.
 - **xAI**: 50% off standard rates for all token types.
 

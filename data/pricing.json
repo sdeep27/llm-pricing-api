@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-22T14:00:00Z",
+  "last_updated": "2026-04-25T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -11,6 +11,21 @@
     "rankings": "https://artificialanalysis.ai/leaderboards/models"
   },
   "models": [
+    {
+      "name": "GPT-5.5",
+      "provider": "openai",
+      "intelligence_score": 58,
+      "intelligence_score_provisional": true,
+      "input_price": 5.00,
+      "output_price": 30.00,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.50,
+      "batch_input_price": 2.50,
+      "batch_output_price": 15.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
     {
       "name": "Gemini 3.1 Pro Preview",
       "provider": "google",
@@ -62,15 +77,15 @@
       "context_window": null,
       "max_output": 128000,
       "cache_read_price": 0.175,
-      "batch_input_price": 0.875,
-      "batch_output_price": 7.00,
+      "batch_input_price": 1.75,
+      "batch_output_price": 14.00,
       "search_price": 0.010,
       "search_free_tier": null
     },
     {
       "name": "Claude Opus 4.6",
       "provider": "anthropic",
-      "intelligence_score": 53,
+      "intelligence_score": 52,
       "input_price": 5.00,
       "output_price": 25.00,
       "context_window": 1000000,
@@ -167,20 +182,6 @@
       "search_free_tier": "5K free/mo"
     },
     {
-      "name": "Gemini 2.5 Pro",
-      "provider": "google",
-      "intelligence_score": 45,
-      "input_price": 1.25,
-      "output_price": 10.00,
-      "context_window": 1000000,
-      "max_output": 65536,
-      "cache_read_price": 0.125,
-      "batch_input_price": 0.625,
-      "batch_output_price": 5.00,
-      "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
-    },
-    {
       "name": "Claude Sonnet 4.5",
       "provider": "anthropic",
       "intelligence_score": 44,
@@ -192,6 +193,20 @@
       "batch_input_price": 1.50,
       "batch_output_price": 7.50,
       "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "GPT-5.4 Nano",
+      "provider": "openai",
+      "intelligence_score": 44,
+      "input_price": 0.20,
+      "output_price": 1.25,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.02,
+      "batch_input_price": 0.10,
+      "batch_output_price": 0.625,
+      "search_price": null,
       "search_free_tier": null
     },
     {
@@ -238,6 +253,21 @@
       "search_free_tier": null
     },
     {
+      "name": "GPT-5.5 Pro",
+      "provider": "openai",
+      "intelligence_score": 39,
+      "intelligence_score_provisional": true,
+      "input_price": 30.00,
+      "output_price": 180.00,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": null,
+      "batch_input_price": 15.00,
+      "batch_output_price": 90.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
       "name": "GPT-5.4 Pro",
       "provider": "openai",
       "intelligence_score": 38,
@@ -248,6 +278,20 @@
       "cache_read_price": null,
       "batch_input_price": 15.00,
       "batch_output_price": 90.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Haiku 4.5",
+      "provider": "anthropic",
+      "intelligence_score": 37,
+      "input_price": 1.00,
+      "output_price": 5.00,
+      "context_window": 200000,
+      "max_output": 64000,
+      "cache_read_price": 0.10,
+      "batch_input_price": 0.50,
+      "batch_output_price": 2.50,
       "search_price": 0.010,
       "search_free_tier": null
     },
@@ -266,6 +310,20 @@
       "search_free_tier": "1.5K free/day"
     },
     {
+      "name": "Gemini 2.5 Pro",
+      "provider": "google",
+      "intelligence_score": 35,
+      "input_price": 1.25,
+      "output_price": 10.00,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.125,
+      "batch_input_price": 0.625,
+      "batch_output_price": 5.00,
+      "search_price": 0.035,
+      "search_free_tier": "1.5K free/day"
+    },
+    {
       "name": "Gemini 3.1 Flash-Lite Preview",
       "provider": "google",
       "intelligence_score": 34,
@@ -280,48 +338,6 @@
       "search_free_tier": "5K free/mo"
     },
     {
-      "name": "GPT-5.4 Nano",
-      "provider": "openai",
-      "intelligence_score": 30,
-      "input_price": 0.20,
-      "output_price": 1.25,
-      "context_window": null,
-      "max_output": 128000,
-      "cache_read_price": 0.02,
-      "batch_input_price": 0.10,
-      "batch_output_price": 0.625,
-      "search_price": null,
-      "search_free_tier": null
-    },
-    {
-      "name": "Claude Haiku 4.5",
-      "provider": "anthropic",
-      "intelligence_score": 28,
-      "input_price": 1.00,
-      "output_price": 5.00,
-      "context_window": 200000,
-      "max_output": 64000,
-      "cache_read_price": 0.10,
-      "batch_input_price": 0.50,
-      "batch_output_price": 2.50,
-      "search_price": 0.010,
-      "search_free_tier": null
-    },
-    {
-      "name": "Gemini 2.5 Flash-Lite",
-      "provider": "google",
-      "intelligence_score": 25,
-      "input_price": 0.10,
-      "output_price": 0.40,
-      "context_window": 1000000,
-      "max_output": 65536,
-      "cache_read_price": 0.01,
-      "batch_input_price": 0.05,
-      "batch_output_price": 0.20,
-      "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
-    },
-    {
       "name": "Claude Haiku 3.5",
       "provider": "anthropic",
       "intelligence_score": 22,
@@ -334,6 +350,20 @@
       "batch_output_price": 2.00,
       "search_price": 0.010,
       "search_free_tier": null
+    },
+    {
+      "name": "Gemini 2.5 Flash-Lite",
+      "provider": "google",
+      "intelligence_score": 22,
+      "input_price": 0.10,
+      "output_price": 0.40,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.01,
+      "batch_input_price": 0.05,
+      "batch_output_price": 0.20,
+      "search_price": 0.035,
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Claude Haiku 3",
