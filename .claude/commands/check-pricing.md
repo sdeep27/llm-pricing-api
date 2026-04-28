@@ -45,7 +45,9 @@ Audit this project's pricing data for staleness against provider source pages.
    - `## Fetch Failures / Manual Review` — anything unverifiable.
    - `## Approx token usage` — a short note like "~N input tokens of source pages fetched; see scheduled-task run page for exact usage."
 
-7. Always update `README.md` to set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
+7. Always update `README.md`:
+   - Set the "Last audited" line to today's date, regardless of whether anything changed. If the line does not exist yet, add a `## Data freshness` section after the API section containing it.
+   - Prepend a new entry to the audit history list between `<!-- audit-history-start -->` and `<!-- audit-history-end -->` markers. Format: `- YYYY-MM-DD: <one-line summary>`. For no-change audits, use `- YYYY-MM-DD: no changes`. The summary should match the level of detail of the to_do.md completed-audit entries (e.g. specific models added, scores resolved, fields updated). After prepending, trim the list to the 5 most recent entries.
 
 8. Always bump `last_updated` in `pricing.json` to the current UTC time as an ISO 8601 timestamp (e.g. `"2026-04-14T14:00:00Z"`) when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site, which the browser converts to the viewer's local timezone.
 
