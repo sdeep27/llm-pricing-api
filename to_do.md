@@ -1,6 +1,9 @@
 # To Dos Remaining
 - Add image/vision input pricing (needs design discussion for cross-provider comparison)
 
+# Operational notes
+- 2026-04-25: cron's `git push` had been failing silently for ~a week (3 audits stranded locally). Backlog pushed manually; auth method for cron now reconfigured so future runs push cleanly.
+
 # To Dos Completed
 - ~~Integrate Artificial Analysis API for automated rankings (user has API key)~~
 - ~~Ask any open questions and develop initial scaffolding~~
@@ -22,3 +25,4 @@
 - ~~Pricing audit 2026-04-17: added Claude Opus 4.7 (provisional score 54), resolved Gemini 3.1 Flash-Lite Preview score (26→34)~~
 - ~~Pricing audit 2026-04-19: resolved Claude Opus 4.7 provisional score (54→57)~~
 - ~~Pricing audit 2026-04-25: added GPT-5.5 + GPT-5.5 Pro (provisional), updated GPT-5.3 Codex batch pricing (now equals standard, no discount), refreshed AA scores for Opus 4.6, Haiku 4.5, GPT-5.4 Nano, Gemini 2.5 Pro, Gemini 2.5 Flash-Lite~~
+- ~~Pricing audit 2026-04-28: resolved GPT-5.5 provisional score (58→60); xAI page didn't expose pricing inline so Grok rows carried forward unchanged~~

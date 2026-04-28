@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-25T14:00:00Z",
+  "last_updated": "2026-04-28T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -14,8 +14,7 @@
     {
       "name": "GPT-5.5",
       "provider": "openai",
-      "intelligence_score": 58,
-      "intelligence_score_provisional": true,
+      "intelligence_score": 60,
       "input_price": 5.00,
       "output_price": 30.00,
       "context_window": null,
