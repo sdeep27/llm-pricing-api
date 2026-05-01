@@ -46,7 +46,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 
 **Google** -- varies by model family
 - Gemini 3.x (3.1 Pro Preview, 3 Flash Preview, 3 Pro Image Preview): $14/1K ($0.014/search), **5,000 free searches/month** shared across Gemini 3 models
-- Gemini 2.5 (Pro, Flash, Flash-Lite): $35/1K ($0.035/search), **1,500 free searches/day** (RPD, shared across Flash and Flash-Lite; Pro gets 10,000 RPD free for Maps grounding)
+- Gemini 2.5 (Pro, Flash, Flash-Lite): $35/1K ($0.035/search). Free tiers diverge by model: **Pro = 1,500 free/day**; **Flash = 500 free/day**; **Flash-Lite = 500 free/day**. Pro additionally gets 10,000 RPD free for Maps grounding. (As of 2026-05-01 — the previously documented 1,500/day shared pool was reduced for Flash and Flash-Lite.)
 - Important: "A customer-submitted request to Gemini may result in one or more queries to Google Search. You will be charged for each individual search query performed." -- a single prompt can trigger multiple billed searches
 - Google also offers "Google Maps grounding" with similar pricing structure
 - The free tier units are different between families: monthly for Gemini 3, daily (RPD) for Gemini 2.5
