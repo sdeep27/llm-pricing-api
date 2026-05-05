@@ -51,7 +51,11 @@ Audit this project's pricing data for staleness against provider source pages.
 
 8. Always bump `last_updated` in `pricing.json` to the current UTC time as an ISO 8601 timestamp (e.g. `"2026-04-14T14:00:00Z"`) when `--apply` is passed, even if no pricing changed. This drives the "Pricing last verified" timestamp on the live site, which the browser converts to the viewer's local timezone.
 
-9. Branch on outcome:
+9. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
+
+10. Print the report to stdout.
+
+11. Branch on outcome (this MUST be the final step — nothing after the push, so a tight turn budget can never strand a commit locally):
 
    **If no pricing changes** (only the README and last_updated were touched):
    - Commit on `main` with message `chore: pricing audit YYYY-MM-DD (no changes)`.
@@ -62,14 +66,12 @@ Audit this project's pricing data for staleness against provider source pages.
    - `git push origin main`.
 
    **If `--apply` was NOT passed:**
-   - Skip all git/PR steps. Leave files untouched except printing the report to stdout.
+   - Skip all git/PR steps. Leave files untouched.
 
    **If there were fetch failures only** (no content changes found, but some sources unreachable):
    - Still do the no-change path (commit README freshness to main, push).
 
-10. Also keep `to_do.md` in sync: if pricing changed, append a one-line completed entry describing the audit date.
-
-11. Print the report to stdout at the end.
+   After pushing, verify with `git status` that the working tree is clean and the branch is up-to-date with `origin/main`. If not, raise the failure loudly in the final stdout — do not exit silently.
 
 ## Guidance
 

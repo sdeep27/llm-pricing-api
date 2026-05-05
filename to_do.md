@@ -3,6 +3,7 @@
 
 # Operational notes
 - 2026-04-25: cron's `git push` had been failing silently for ~a week (3 audits stranded locally). Backlog pushed manually; auth method for cron now reconfigured so future runs push cleanly.
+- 2026-05-05: 2026-05-04 audit committed locally but cron's `--max-turns 30` ran out before `git push` (commit timestamp 14:04:56 — right at the budget edge). Pushed manually; bumped crontab to `--max-turns 60` and reordered `check-pricing.md` so push is the final step with a post-push `git status` verification that fails loudly if the branch isn't up-to-date with origin.
 
 # To Dos Completed
 - ~~Integrate Artificial Analysis API for automated rankings (user has API key)~~
