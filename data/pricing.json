@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-10T14:00:00Z",
+  "last_updated": "2026-05-13T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -254,6 +254,7 @@
     {
       "name": "Grok 4.1 Fast",
       "provider": "xai",
+      "deprecated": true,
       "intelligence_score": 39,
       "input_price": 0.20,
       "output_price": 0.50,
@@ -320,7 +321,7 @@
       "batch_input_price": 0.15,
       "batch_output_price": 1.25,
       "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
+      "search_free_tier": "500 free/day"
     },
     {
       "name": "Gemini 2.5 Pro",
@@ -376,7 +377,7 @@
       "batch_input_price": 0.05,
       "batch_output_price": 0.20,
       "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
+      "search_free_tier": "500 free/day"
     },
     {
       "name": "Claude Haiku 3",

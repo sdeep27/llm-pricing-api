@@ -30,3 +30,4 @@
 - ~~Pricing audit 2026-05-01: Gemini 2.5 Flash and Flash-Lite free search tiers cut from 1.5K/day to 500/day; flagged a possible new Grok 4.3 model (AA score 53) for manual review since xAI page still doesn't expose pricing inline~~
 - ~~Pricing audit 2026-05-04: Gemini 2.5 Flash and Flash-Lite free search tiers reverted from 500/day back to a 1.5K/day shared pool; Grok 4.3 (now on AA at 53) still flagged for manual review since xAI page doesn't expose pricing inline~~
 - ~~Pricing audit 2026-05-10: added Grok 4.3 (AA score 53, ctx 1M); xAI cut Grok 4.20 and Grok 4.20 Multi-Agent prices (input $2.00→$1.25, output $6.00→$2.50, batch and cache scaled accordingly)~~
+- ~~Pricing audit 2026-05-13: Gemini 2.5 Flash and Flash-Lite free search tiers flipped back to 500/day shared (from 1.5K/day shared); marked Grok 4.1 Fast deprecated (xAI page announces 2026-05-15 retirement)~~
