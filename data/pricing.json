@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13T14:00:00Z",
+  "last_updated": "2026-05-16T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -354,6 +354,7 @@
     {
       "name": "Claude Haiku 3.5",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": 22,
       "input_price": 0.80,
       "output_price": 4.00,
