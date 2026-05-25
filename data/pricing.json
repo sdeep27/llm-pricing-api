@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-22T14:00:00Z",
+  "last_updated": "2026-05-25T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -68,6 +68,20 @@
       "search_free_tier": null
     },
     {
+      "name": "Gemini 3.5 Flash",
+      "provider": "google",
+      "intelligence_score": 55,
+      "input_price": 1.50,
+      "output_price": 9.00,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.15,
+      "batch_input_price": 0.75,
+      "batch_output_price": 4.50,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
+    },
+    {
       "name": "GPT-5.3 Codex",
       "provider": "openai",
       "intelligence_score": 54,
@@ -130,7 +144,7 @@
       "intelligence_score_provisional": true,
       "input_price": 1.25,
       "output_price": 2.50,
-      "context_window": 2000000,
+      "context_window": 1000000,
       "max_output": null,
       "cache_read_price": 0.125,
       "batch_input_price": 0.625,
@@ -144,7 +158,7 @@
       "intelligence_score": 49,
       "input_price": 1.25,
       "output_price": 2.50,
-      "context_window": 2000000,
+      "context_window": 1000000,
       "max_output": null,
       "cache_read_price": 0.125,
       "batch_input_price": 0.625,
@@ -321,7 +335,7 @@
       "batch_input_price": 0.15,
       "batch_output_price": 1.25,
       "search_price": 0.035,
-      "search_free_tier": "500 free/day"
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Gemini 2.5 Pro",
@@ -378,7 +392,7 @@
       "batch_input_price": 0.05,
       "batch_output_price": 0.20,
       "search_price": 0.035,
-      "search_free_tier": "500 free/day"
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Claude Haiku 3",
@@ -407,6 +421,20 @@
       "batch_input_price": 7.50,
       "batch_output_price": 37.50,
       "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "Grok Build 0.1",
+      "provider": "xai",
+      "intelligence_score": null,
+      "input_price": 1.00,
+      "output_price": 2.00,
+      "context_window": 256000,
+      "max_output": null,
+      "cache_read_price": 0.10,
+      "batch_input_price": 0.50,
+      "batch_output_price": 1.00,
+      "search_price": 0.005,
       "search_free_tier": null
     }
   ]
