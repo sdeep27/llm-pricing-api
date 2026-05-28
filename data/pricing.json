@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-25T14:00:00Z",
+  "last_updated": "2026-05-28T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -352,7 +352,7 @@
       "search_free_tier": "1.5K free/day"
     },
     {
-      "name": "Gemini 3.1 Flash-Lite Preview",
+      "name": "Gemini 3.1 Flash-Lite",
       "provider": "google",
       "intelligence_score": 34,
       "input_price": 0.25,

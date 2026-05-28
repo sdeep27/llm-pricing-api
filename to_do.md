@@ -33,3 +33,4 @@
 - ~~Pricing audit 2026-05-13: Gemini 2.5 Flash and Flash-Lite free search tiers flipped back to 500/day shared (from 1.5K/day shared); marked Grok 4.1 Fast deprecated (xAI page announces 2026-05-15 retirement)~~
 - ~~Pricing audit 2026-05-16: marked Claude Haiku 3.5 deprecated (Anthropic pricing page now labels it "retired, except on Bedrock and Vertex AI")~~
 - ~~Pricing audit 2026-05-25: added Gemini 3.5 Flash (AA score 55, $1.50/$9.00) and Grok Build 0.1 ($1/$2, 256K, score null); cut Grok 4.20 and Grok 4.20 Multi-Agent context window 2M→1M (second observation); Gemini 2.5 Flash + Flash-Lite free search tier flipped back to 1.5K/day shared (from 500/day shared)~~
+- ~~Pricing audit 2026-05-28: renamed Gemini 3.1 Flash-Lite Preview → Gemini 3.1 Flash-Lite (now GA on Google's pricing page, pricing and score unchanged); flagged Claude Haiku 3 for manual review (no longer listed on Anthropic's pricing table)~~
