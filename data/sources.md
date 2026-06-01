@@ -26,7 +26,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 **Anthropic** -- $10/1K searches ($0.010/search)
 - No free tier
 - Tool versions: `web_search_20260209` (with dynamic filtering, requires code execution tool) and `web_search_20250305` (basic)
-- `web_search_20260209` dynamic filtering supported on: Claude Mythos Preview, Opus 4.7, Opus 4.6, Sonnet 4.6
+- `web_search_20260209` dynamic filtering supported on: Claude Opus 4.8, Claude Mythos Preview, Opus 4.7, Opus 4.6, Sonnet 4.6
 - Basic web search (`web_search_20250305`) is GA across all recent Claude models
 - Older models (Haiku 3) likely don't support it; Anthropic doesn't publish an explicit exclusion list
 - Search content tokens count as input tokens and are billed at model rates
