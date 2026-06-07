@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-04T14:02:32Z",
+  "last_updated": "2026-06-07T14:01:39Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -268,6 +268,7 @@
     {
       "name": "Claude Opus 4.1",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": 41,
       "input_price": 15.00,
       "output_price": 75.00,
