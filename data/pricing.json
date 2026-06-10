@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-07T14:01:39Z",
+  "last_updated": "2026-06-10T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -11,6 +11,20 @@
     "rankings": "https://artificialanalysis.ai/leaderboards/models"
   },
   "models": [
+    {
+      "name": "Claude Fable 5",
+      "provider": "anthropic",
+      "intelligence_score": 65,
+      "input_price": 10.00,
+      "output_price": 50.00,
+      "context_window": 1000000,
+      "max_output": null,
+      "cache_read_price": 1.00,
+      "batch_input_price": 5.00,
+      "batch_output_price": 25.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
     {
       "name": "Claude Opus 4.8",
       "provider": "anthropic",
@@ -450,6 +464,20 @@
       "batch_input_price": 0.50,
       "batch_output_price": 1.00,
       "search_price": 0.005,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Mythos 5",
+      "provider": "anthropic",
+      "intelligence_score": null,
+      "input_price": 10.00,
+      "output_price": 50.00,
+      "context_window": 1000000,
+      "max_output": null,
+      "cache_read_price": 1.00,
+      "batch_input_price": 5.00,
+      "batch_output_price": 25.00,
+      "search_price": 0.010,
       "search_free_tier": null
     }
   ]
