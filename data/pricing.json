@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-16T14:01:47Z",
+  "last_updated": "2026-06-19T14:01:54Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -364,7 +364,7 @@
       "batch_input_price": 0.15,
       "batch_output_price": 1.25,
       "search_price": 0.035,
-      "search_free_tier": "500 free/day"
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Gemini 2.5 Pro",
@@ -421,7 +421,7 @@
       "batch_input_price": 0.05,
       "batch_output_price": 0.20,
       "search_price": 0.035,
-      "search_free_tier": "500 free/day"
+      "search_free_tier": "1.5K free/day"
     },
     {
       "name": "Claude Haiku 3",
