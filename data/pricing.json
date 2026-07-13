@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-19T14:01:54Z",
+  "last_updated": "2026-07-13T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -40,6 +40,21 @@
       "search_free_tier": null
     },
     {
+      "name": "GPT-5.6 Sol",
+      "provider": "openai",
+      "intelligence_score": 61,
+      "intelligence_score_provisional": true,
+      "input_price": 5.00,
+      "output_price": 30.00,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.50,
+      "batch_input_price": 2.50,
+      "batch_output_price": 15.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
       "name": "GPT-5.5",
       "provider": "openai",
       "intelligence_score": 60,
@@ -50,6 +65,21 @@
       "cache_read_price": 0.50,
       "batch_input_price": 2.50,
       "batch_output_price": 15.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "GPT-5.6 Terra",
+      "provider": "openai",
+      "intelligence_score": 58,
+      "intelligence_score_provisional": true,
+      "input_price": 2.50,
+      "output_price": 15.00,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.25,
+      "batch_input_price": 1.25,
+      "batch_output_price": 7.50,
       "search_price": 0.010,
       "search_free_tier": null
     },
@@ -124,6 +154,21 @@
       "search_free_tier": null
     },
     {
+      "name": "Grok 4.5",
+      "provider": "xai",
+      "intelligence_score": 54,
+      "intelligence_score_provisional": true,
+      "input_price": 2.00,
+      "output_price": 6.00,
+      "context_window": 500000,
+      "max_output": null,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 3.00,
+      "search_price": 0.005,
+      "search_free_tier": null
+    },
+    {
       "name": "Grok 4.3",
       "provider": "xai",
       "intelligence_score": 53,
@@ -135,6 +180,21 @@
       "batch_input_price": 0.625,
       "batch_output_price": 1.25,
       "search_price": 0.005,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Sonnet 5",
+      "provider": "anthropic",
+      "intelligence_score": 53,
+      "intelligence_score_provisional": true,
+      "input_price": 2.00,
+      "output_price": 10.00,
+      "context_window": 1000000,
+      "max_output": 128000,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 5.00,
+      "search_price": 0.010,
       "search_free_tier": null
     },
     {
@@ -178,6 +238,21 @@
       "batch_input_price": 0.625,
       "batch_output_price": 1.25,
       "search_price": 0.005,
+      "search_free_tier": null
+    },
+    {
+      "name": "GPT-5.6 Luna",
+      "provider": "openai",
+      "intelligence_score": 50,
+      "intelligence_score_provisional": true,
+      "input_price": 1.00,
+      "output_price": 6.00,
+      "context_window": null,
+      "max_output": 128000,
+      "cache_read_price": 0.10,
+      "batch_input_price": 0.50,
+      "batch_output_price": 3.00,
+      "search_price": null,
       "search_free_tier": null
     },
     {
@@ -364,7 +439,7 @@
       "batch_input_price": 0.15,
       "batch_output_price": 1.25,
       "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
+      "search_free_tier": "500 free/day"
     },
     {
       "name": "Gemini 2.5 Pro",
@@ -421,7 +496,7 @@
       "batch_input_price": 0.05,
       "batch_output_price": 0.20,
       "search_price": 0.035,
-      "search_free_tier": "1.5K free/day"
+      "search_free_tier": "500 free/day"
     },
     {
       "name": "Claude Haiku 3",
