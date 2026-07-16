@@ -17,3 +17,4 @@ llm-pricing-api.service
 llm-pricing-api.nginx
 deploy.sh
 logs/
+.audit.env
