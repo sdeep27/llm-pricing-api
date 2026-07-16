@@ -25,7 +25,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 
 **Anthropic** -- $10/1K searches ($0.010/search)
 - No free tier
-- Tool versions: `web_search_20260209` (with dynamic filtering, requires code execution tool) and `web_search_20250305` (basic)
+- Tool versions: `web_search_20250305` (basic), `web_search_20260209` (adds dynamic filtering, requires code execution tool), `web_search_20260318` (adds `response_inclusion` control for agentic workflows)
 - `web_search_20260209` dynamic filtering supported on: Claude Fable 5, Claude Opus 4.8, Claude Mythos 5, Claude Mythos Preview, Opus 4.7, Opus 4.6, Claude Sonnet 5, Sonnet 4.6
 - Basic web search (`web_search_20250305`) is GA across all recent Claude models
 - Older models (Haiku 3) likely don't support it; Anthropic doesn't publish an explicit exclusion list
@@ -64,7 +64,7 @@ All four providers use the same 0.1x multiplier for cache reads (90% discount on
 - **Anthropic**: 0.1x base input. Also has cache write costs (1.25x for 5-min, 2x for 1-hour) but we only track the read price.
 - **OpenAI**: 0.1x base input (90% off). GPT-5.4 Pro does NOT support cached input.
 - **Google**: 0.1x base input. Also charges a storage fee ($4.50/1M tokens/hour) which we don't track.
-- **xAI**: 0.1x base input. Automatic caching, no user configuration needed.
+- **xAI**: No longer a flat 0.1x multiplier (changed as of 2026-07-16 audit). Cached input is now a model-specific published rate: Grok 4.3/4.20/4.20 Multi-Agent = $0.20 (0.16x of $1.25 input), Grok Build 0.1 = $0.20 (0.2x of $1.00 input), Grok 4.5 = $0.50 (0.25x of $2.00 input). Always read the "Cached input" column directly rather than assuming 10%. Automatic caching, no user configuration needed.
 
 ## Batch Pricing
 
@@ -122,4 +122,6 @@ Notes for future agents updating this data:
 
 12. **Anthropic max output varies by model generation**: Unlike OpenAI (consistent 128K) or Google (consistent 65K), Anthropic's max output ranges from 4K (Haiku 3) to 128K (Opus 4.7/4.6). Always check per-model.
 
-13. **Opus 4.7 tokenizer change**: Opus 4.7 uses a new tokenizer that may use up to 35% more tokens for the same text compared to previous models. This affects effective cost comparisons.
+13. **Opus 4.7+ tokenizer change**: Claude Opus 4.7 and later Opus models, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, and Claude Sonnet 5 use a newer tokenizer that produces ~30% more tokens for the same text (Anthropic's docs previously said "up to 35%"; re-verify this figure each audit). Sonnet 4.6 and earlier use the previous tokenizer. This affects effective cost comparisons.
+
+14. **xAI cached input is not a flat 10% multiplier**: Confirmed 2026-07-16 — xAI publishes explicit per-model "Cached input" prices on `docs.x.ai/developers/models` that vary between 16-25% of the base input price depending on the model. Don't assume 0.1x; read the column directly.
