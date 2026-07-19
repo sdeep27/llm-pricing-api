@@ -64,7 +64,7 @@ All four providers use the same 0.1x multiplier for cache reads (90% discount on
 - **Anthropic**: 0.1x base input. Also has cache write costs (1.25x for 5-min, 2x for 1-hour) but we only track the read price.
 - **OpenAI**: 0.1x base input (90% off). GPT-5.4 Pro does NOT support cached input.
 - **Google**: 0.1x base input. Also charges a storage fee ($4.50/1M tokens/hour) which we don't track.
-- **xAI**: No longer a flat 0.1x multiplier (changed as of 2026-07-16 audit). Cached input is now a model-specific published rate: Grok 4.3/4.20/4.20 Multi-Agent = $0.20 (0.16x of $1.25 input), Grok Build 0.1 = $0.20 (0.2x of $1.00 input), Grok 4.5 = $0.50 (0.25x of $2.00 input). Always read the "Cached input" column directly rather than assuming 10%. Automatic caching, no user configuration needed.
+- **xAI**: No longer a flat 0.1x multiplier (changed as of 2026-07-16 audit). Cached input is now a model-specific published rate: Grok 4.3/4.20/4.20 Multi-Agent = $0.20 (0.16x of $1.25 input), Grok Build 0.1 = $0.20 (0.2x of $1.00 input), Grok 4.5 = $0.30 (0.15x of $2.00 input, corrected 2026-07-19 from $0.50 recorded on 2026-07-16 — re-verified directly against the "Cached input" column twice this run). Always read the "Cached input" column directly rather than assuming 10%. Automatic caching, no user configuration needed.
 
 ## Batch Pricing
 
@@ -115,6 +115,8 @@ Notes for future agents updating this data:
 8. **Search price units**: In pricing.json, `search_price` is stored as the cost per single search (e.g., 0.010 = $0.01/search). The source pages list prices per 1,000 searches. Remember to divide by 1,000 when entering data.
 
 9. **Google batch pricing tiers**: Google has different batch rates for prompts >200K vs <=200K tokens. We store the <=200K rate. If a user typically sends large prompts, they'll pay more.
+
+9a. **Google standard pricing is also context-tiered for Pro-class models**: Not just batch — Gemini 2.5 Pro and Gemini 3.1 Pro Preview's standard (non-batch) input/output/cached prices also step up above 200K tokens (e.g. Gemini 2.5 Pro: $1.25/$10 in/out at <=200K vs $2.50/$15 above). We store the <=200K rate consistently across standard, cached, and batch fields. Confirmed 2026-07-19.
 
 10. **Google cache storage fees**: Google charges a per-hour storage fee for cached content ($4.50/1M tokens/hour) on top of the discounted read price. We only track the read price, not storage. This makes Google caching harder to compare directly with other providers.
 
