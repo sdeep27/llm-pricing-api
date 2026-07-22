@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-19T14:00:00Z",
+  "last_updated": "2026-07-22T14:02:25Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -124,6 +124,21 @@
       "batch_output_price": 12.50,
       "search_price": 0.010,
       "search_free_tier": null
+    },
+    {
+      "name": "Gemini 3.6 Flash",
+      "provider": "google",
+      "intelligence_score": 56,
+      "intelligence_score_provisional": true,
+      "input_price": 1.50,
+      "output_price": 7.50,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.15,
+      "batch_input_price": 0.75,
+      "batch_output_price": 3.75,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
     },
     {
       "name": "Gemini 3.5 Flash",
