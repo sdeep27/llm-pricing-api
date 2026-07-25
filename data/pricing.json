@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-22T14:02:25Z",
+  "last_updated": "2026-07-25T14:03:30Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -22,6 +22,21 @@
       "cache_read_price": 1.00,
       "batch_input_price": 5.00,
       "batch_output_price": 25.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Opus 5",
+      "provider": "anthropic",
+      "intelligence_score": 62,
+      "intelligence_score_provisional": true,
+      "input_price": 5.00,
+      "output_price": 25.00,
+      "context_window": 1000000,
+      "max_output": null,
+      "cache_read_price": 0.50,
+      "batch_input_price": 2.50,
+      "batch_output_price": 12.50,
       "search_price": 0.010,
       "search_free_tier": null
     },
@@ -441,6 +456,21 @@
       "batch_output_price": 2.50,
       "search_price": 0.010,
       "search_free_tier": null
+    },
+    {
+      "name": "Gemini 3.5 Flash-Lite",
+      "provider": "google",
+      "intelligence_score": 35,
+      "intelligence_score_provisional": true,
+      "input_price": 0.30,
+      "output_price": 2.50,
+      "context_window": 1000000,
+      "max_output": 65536,
+      "cache_read_price": 0.03,
+      "batch_input_price": 0.15,
+      "batch_output_price": 1.25,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
     },
     {
       "name": "Gemini 2.5 Flash",

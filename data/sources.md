@@ -26,7 +26,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 **Anthropic** -- $10/1K searches ($0.010/search)
 - No free tier
 - Tool versions: `web_search_20250305` (basic), `web_search_20260209` (adds dynamic filtering, requires code execution tool), `web_search_20260318` (adds `response_inclusion` control for agentic workflows)
-- `web_search_20260209` dynamic filtering supported on: Claude Fable 5, Claude Opus 4.8, Claude Mythos 5, Claude Mythos Preview, Opus 4.7, Opus 4.6, Claude Sonnet 5, Sonnet 4.6
+- `web_search_20260209` dynamic filtering supported on: Claude Fable 5, Claude Opus 5, Claude Opus 4.8, Claude Mythos 5, Claude Mythos Preview, Opus 4.7, Opus 4.6, Claude Sonnet 5, Sonnet 4.6 (Anthropic's docs now phrase this as "Claude 4.6 and later models and Claude Mythos Preview")
 - Basic web search (`web_search_20250305`) is GA across all recent Claude models
 - Older models (Haiku 3) likely don't support it; Anthropic doesn't publish an explicit exclusion list
 - Search content tokens count as input tokens and are billed at model rates
@@ -129,3 +129,7 @@ Notes for future agents updating this data:
 14. **xAI cached input is not a flat 10% multiplier**: Confirmed 2026-07-16 — xAI publishes explicit per-model "Cached input" prices on `docs.x.ai/developers/models` that vary between 16-25% of the base input price depending on the model. Don't assume 0.1x; read the column directly.
 
 15. **xAI is now context-tiered above 200K, like Google's Pro-class models**: Confirmed 2026-07-22 — `docs.x.ai/developers/models` now lists separate input/output/cached rates for <200K vs >=200K tokens (e.g. Grok 4.5: $2/$6 base vs $4/$12 above 200K; ratio holds for Grok 4.3, 4.20, 4.20 Multi-Agent, Build 0.1 too). We store the <200K rate, same convention as Google's tiering (gotcha 9a). All base-tier rates matched previously stored values this run — no price changes, just a schema note.
+
+16. **Anthropic fast mode is a separate premium price**: Confirmed 2026-07-25 — Claude Opus 5 and Opus 4.8 offer a "fast mode" (research preview) at $10/$50 in/out vs the standard $5/$25. It's a request-time speed option, not a different model; we store only standard pricing and don't track this dimension.
+
+17. **xAI batch/search pricing can drop out of the models page extraction**: On 2026-07-25 the `docs.x.ai/developers/models` fetch returned per-model token+cache prices but no batch, web search, X search, or collections pricing. Treat a missing column as an extraction/layout issue, not a price removal — carry stored values forward and re-verify next run.
