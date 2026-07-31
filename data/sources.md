@@ -46,7 +46,7 @@ Web search pricing is on the same pages listed above. Anthropic also has a dedic
 
 **Google** -- varies by model family
 - Gemini 3.x (3.1 Pro Preview, 3 Flash Preview, 3 Pro Image Preview): $14/1K ($0.014/search), **5,000 free searches/month** shared across Gemini 3 models
-- Gemini 2.5 (Pro, Flash, Flash-Lite): $35/1K ($0.035/search). Free tier: **Pro = 1,500 free/day** (separate); **Flash + Flash-Lite share a 1,500/day pool**. Pro additionally gets 10,000 RPD free for Maps grounding. (Watch this — Google has flipped between a 500/day cut and a 1.5K/day shared pool over the past month; re-verify each audit.)
+- Gemini 2.5 (Pro, Flash, Flash-Lite): $35/1K ($0.035/search). Free tier: **Pro = 1,500 free/day** (separate); **Flash + Flash-Lite share a pool that is two-tiered**: 500/day for free-tier accounts, 1,500/day for paid-tier accounts. Pro additionally gets 10,000 RPD free for Maps grounding. (Resolved 2026-07-31: the page now shows both quotas side by side — the historical "flips" between 500/day and 1.5K/day were extractions catching one tier or the other, not Google changing the quota. We store the paid-tier 1.5K/day value since API billing customers are on the paid tier. Don't "fix" it back to 500/day when an extraction surfaces only the free-tier number.)
 - Important: "A customer-submitted request to Gemini may result in one or more queries to Google Search. You will be charged for each individual search query performed." -- a single prompt can trigger multiple billed searches
 - Google also offers "Google Maps grounding" with similar pricing structure
 - The free tier units are different between families: monthly for Gemini 3, daily (RPD) for Gemini 2.5
@@ -71,7 +71,7 @@ All four providers use the same 0.1x multiplier for cache reads (90% discount on
 All four providers offer batch processing at roughly 50% off standard rates.
 
 - **Anthropic**: Exactly 50% off input and output. All models supported.
-- **OpenAI**: Exactly 50% off for the GPT-5.4 family. GPT-5.3 Codex is an exception — its batch pricing equals standard pricing (no batch discount). Note: the codex batch columns drop out of page extractions intermittently (absent 2026-07-25 and 2026-07-28 runs); treat absence as a layout issue and carry stored values forward, per the same logic as xAI gotcha 17.
+- **OpenAI**: Exactly 50% off for the GPT-5.4 family. GPT-5.3 Codex is an exception — its batch pricing equals standard pricing (no batch discount). Note: the codex batch columns drop out of page extractions intermittently (absent 2026-07-25, 2026-07-28, and 2026-07-31 runs); treat absence as a layout issue and carry stored values forward, per the same logic as xAI gotcha 17.
 - **Google**: Approximately 50% off. Some models have tiered batch pricing (different rates for prompts >200K tokens vs <=200K). We store the <=200K rate.
 - **xAI**: 50% off standard rates for all token types.
 
@@ -132,6 +132,8 @@ Notes for future agents updating this data:
 
 16. **Anthropic fast mode is a separate premium price**: Confirmed 2026-07-25 — Claude Opus 5 and Opus 4.8 offer a "fast mode" (research preview) at $10/$50 in/out vs the standard $5/$25. It's a request-time speed option, not a different model; we store only standard pricing and don't track this dimension.
 
-17. **xAI batch/search pricing can drop out of the models page extraction**: On 2026-07-25 the `docs.x.ai/developers/models` fetch returned per-model token+cache prices but no batch, web search, X search, or collections pricing. Treat a missing column as an extraction/layout issue, not a price removal — carry stored values forward and re-verify next run. (Recurred 2026-07-28.)
+17. **xAI batch/search pricing can drop out of the models page extraction**: On 2026-07-25 the `docs.x.ai/developers/models` fetch returned per-model token+cache prices but no batch, web search, X search, or collections pricing. Treat a missing column as an extraction/layout issue, not a price removal — carry stored values forward and re-verify next run. (Recurred 2026-07-28 and 2026-07-31.)
 
-18. **OpenAI GPT-5.6 family has long-context tiered pricing**: Confirmed 2026-07-28 — the pricing page lists a separate "long context" tier for gpt-5.6-sol ($10 input / $1 cached / $45 output), gpt-5.6-terra ($5/$0.50/$22.50), and gpt-5.6-luna ($2/$0.20/$9) — 2x the base rates. Same pattern as Google's and xAI's >200K tiers (gotchas 9a, 15). We store the base (short-context) rate. OpenAI also lists Flex (~50% off) and Priority (~2x) service tiers; we store only standard.
+18. **OpenAI GPT-5.6 family has long-context tiered pricing**: Confirmed 2026-07-28 — the pricing page lists a separate "long context" tier; same pattern as Google's and xAI's >200K tiers (gotchas 9a, 15). We store the base (short-context) rate. Current LC values (updated 2026-07-31 after the Terra/Luna price cut): gpt-5.6-sol $10/$1/$45, gpt-5.6-terra $4/$0.40/$18, gpt-5.6-luna $0.40/$0.04/$1.80 (input/cached 2x base, output 1.5x base); gpt-5.5 and gpt-5.4 also list LC tiers ($10/$1/$45 and $5/$0.50/$22.50 — the terra figure recorded here on 07-28 actually belonged to gpt-5.4). OpenAI also lists Flex (~50% off) and "Fast mode" (~2x, renamed from "Priority" on 2026-07-30, `service_tier: "fast"`) service tiers; we store only standard.
+
+19. **Claude Sonnet 5 intro pricing ends 2026-08-31**: Anthropic publishes both rows: $2/$10 in/out (batch $1/$5, cache $0.20) through August 31, 2026, then $3/$15 (batch $1.50/$7.50, cache $0.30) starting September 1, 2026. We store the intro rate while it's live. The first audit on or after 2026-09-01 must flip Sonnet 5 to the standard rate — that's a scheduled change, not drift.
