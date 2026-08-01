@@ -71,7 +71,7 @@ All four providers use the same 0.1x multiplier for cache reads (90% discount on
 All four providers offer batch processing at roughly 50% off standard rates.
 
 - **Anthropic**: Exactly 50% off input and output. All models supported.
-- **OpenAI**: Exactly 50% off for the GPT-5.4 family. GPT-5.3 Codex is an exception — its batch pricing equals standard pricing (no batch discount). Note: the codex batch columns drop out of page extractions intermittently (absent 2026-07-25, 2026-07-28, and 2026-07-31 runs); treat absence as a layout issue and carry stored values forward, per the same logic as xAI gotcha 17.
+- **OpenAI**: Exactly 50% off for the GPT-5.4 family. GPT-5.3 Codex is an exception — its batch pricing equals standard pricing (no batch discount). Note: the codex batch columns drop out of page extractions intermittently (absent 2026-07-25, 2026-07-28, 2026-07-31, and 2026-08-01 runs); treat absence as a layout issue and carry stored values forward, per the same logic as xAI gotcha 17. Beware: a broad extraction on 2026-08-01 hallucinated codex batch at $0.88/$7.00 (echoing the phantom 2026-06-01 reading); a targeted re-check confirmed codex is simply absent from the batch table — codex sits in a "Specialized models" section with standard/fast pricing only.
 - **Google**: Approximately 50% off. Some models have tiered batch pricing (different rates for prompts >200K tokens vs <=200K). We store the <=200K rate.
 - **xAI**: 50% off standard rates for all token types.
 
@@ -132,7 +132,7 @@ Notes for future agents updating this data:
 
 16. **Anthropic fast mode is a separate premium price**: Confirmed 2026-07-25 — Claude Opus 5 and Opus 4.8 offer a "fast mode" (research preview) at $10/$50 in/out vs the standard $5/$25. It's a request-time speed option, not a different model; we store only standard pricing and don't track this dimension.
 
-17. **xAI batch/search pricing can drop out of the models page extraction**: On 2026-07-25 the `docs.x.ai/developers/models` fetch returned per-model token+cache prices but no batch, web search, X search, or collections pricing. Treat a missing column as an extraction/layout issue, not a price removal — carry stored values forward and re-verify next run. (Recurred 2026-07-28 and 2026-07-31.)
+17. **xAI batch/search pricing can drop out of the models page extraction**: On 2026-07-25 the `docs.x.ai/developers/models` fetch returned per-model token+cache prices but no batch, web search, X search, or collections pricing. Treat a missing column as an extraction/layout issue, not a price removal — carry stored values forward and re-verify next run. (Recurred 2026-07-28, 2026-07-31, and 2026-08-01.)
 
 18. **OpenAI GPT-5.6 family has long-context tiered pricing**: Confirmed 2026-07-28 — the pricing page lists a separate "long context" tier; same pattern as Google's and xAI's >200K tiers (gotchas 9a, 15). We store the base (short-context) rate. Current LC values (updated 2026-07-31 after the Terra/Luna price cut): gpt-5.6-sol $10/$1/$45, gpt-5.6-terra $4/$0.40/$18, gpt-5.6-luna $0.40/$0.04/$1.80 (input/cached 2x base, output 1.5x base); gpt-5.5 and gpt-5.4 also list LC tiers ($10/$1/$45 and $5/$0.50/$22.50 — the terra figure recorded here on 07-28 actually belonged to gpt-5.4). OpenAI also lists Flex (~50% off) and "Fast mode" (~2x, renamed from "Priority" on 2026-07-30, `service_tier: "fast"`) service tiers; we store only standard.
 
