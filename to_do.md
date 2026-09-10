@@ -1,5 +1,6 @@
 # To Dos Remaining
 - Add image/vision input pricing (needs design discussion for cross-provider comparison)
+- Decide how to handle the Artificial Analysis Intelligence Index rescale (sources.md gotcha 34): scores dropped across every provider on 2026-09-07 and again on 2026-09-10 but to different values (top model 66→57→53), so stored scores are now on an old scale. Options: wait for two identical lowered reads then rebase every `intelligence_score` wholesale from one read, or rebase from the next read regardless. Audits will keep NOT rewriting scores until this is decided.
 
 # Operational notes
 - 2026-04-25: cron's `git push` had been failing silently for ~a week (3 audits stranded locally). Backlog pushed manually; auth method for cron now reconfigured so future runs push cleanly.
