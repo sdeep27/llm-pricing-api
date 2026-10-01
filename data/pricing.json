@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-28T14:02:00Z",
+  "last_updated": "2026-10-01T14:00:00Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -109,6 +109,21 @@
       "cache_read_price": 1.00,
       "batch_input_price": 5.00,
       "batch_output_price": 25.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "GPT-6.1 Sol",
+      "provider": "openai",
+      "intelligence_score": 61,
+      "intelligence_score_provisional": true,
+      "input_price": 2.00,
+      "output_price": 10.00,
+      "context_window": null,
+      "max_output": null,
+      "cache_read_price": 0.10,
+      "batch_input_price": 1.00,
+      "batch_output_price": 5.00,
       "search_price": 0.010,
       "search_free_tier": null
     },
@@ -337,6 +352,21 @@
       "batch_input_price": 0.625,
       "batch_output_price": 1.25,
       "search_price": 0.005,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Sonnet 5.5",
+      "provider": "anthropic",
+      "intelligence_score": 54,
+      "intelligence_score_provisional": true,
+      "input_price": 2.00,
+      "output_price": 10.00,
+      "context_window": 1000000,
+      "max_output": 128000,
+      "cache_read_price": 0.20,
+      "batch_input_price": 1.00,
+      "batch_output_price": 5.00,
+      "search_price": 0.010,
       "search_free_tier": null
     },
     {
