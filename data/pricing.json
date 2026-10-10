@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-07T14:00:58Z",
+  "last_updated": "2026-10-10T14:01:01Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -363,7 +363,7 @@
       "output_price": 10.00,
       "context_window": 1000000,
       "max_output": 128000,
-      "cache_read_price": 0.20,
+      "cache_read_price": 0.10,
       "batch_input_price": 1.00,
       "batch_output_price": 5.00,
       "search_price": 0.010,
@@ -514,6 +514,7 @@
     {
       "name": "Claude Sonnet 4.5",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": 44,
       "input_price": 3.00,
       "output_price": 15.00,
@@ -610,6 +611,21 @@
       "cache_read_price": null,
       "batch_input_price": 15.00,
       "batch_output_price": 90.00,
+      "search_price": 0.010,
+      "search_free_tier": null
+    },
+    {
+      "name": "Claude Haiku 5.5",
+      "provider": "anthropic",
+      "intelligence_score": 38,
+      "intelligence_score_provisional": true,
+      "input_price": 0.10,
+      "output_price": 0.50,
+      "context_window": 1000000,
+      "max_output": 128000,
+      "cache_read_price": 0.01,
+      "batch_input_price": 0.05,
+      "batch_output_price": 0.25,
       "search_price": 0.010,
       "search_free_tier": null
     },
@@ -715,6 +731,7 @@
     {
       "name": "Claude Haiku 3",
       "provider": "anthropic",
+      "deprecated": true,
       "intelligence_score": 15,
       "input_price": 0.25,
       "output_price": 1.25,
