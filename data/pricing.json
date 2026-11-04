@@ -1,11 +1,11 @@
 {
-  "last_updated": "2026-11-01T14:01:00Z",
+  "last_updated": "2026-11-04T14:01:45Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
       "anthropic": "https://platform.claude.com/docs/en/about-claude/pricing",
       "openai": "https://developers.openai.com/api/docs/pricing",
-      "google": "https://ai.google.dev/gemini-api/docs/pricing",
+      "google": "https://aistudio.google.com/docs/pricing",
       "xai": "https://docs.x.ai/developers/models"
     },
     "rankings": "https://artificialanalysis.ai/leaderboards/models"
@@ -692,6 +692,7 @@
     {
       "name": "Gemini 2.5 Flash",
       "provider": "google",
+      "deprecated": true,
       "intelligence_score": 35,
       "input_price": 0.30,
       "output_price": 2.50,
@@ -706,6 +707,7 @@
     {
       "name": "Gemini 2.5 Pro",
       "provider": "google",
+      "deprecated": true,
       "intelligence_score": 35,
       "input_price": 1.25,
       "output_price": 10.00,
