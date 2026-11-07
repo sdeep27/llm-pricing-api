@@ -12,6 +12,8 @@ GET https://llmpricingapi.com/api/models
 
 Returns JSON with current pricing for all tracked models. Point your agents here when they need live LLM pricing data.
 
+`intelligence_score` is the [Artificial Analysis](https://artificialanalysis.ai) Intelligence Index, on the version given in the response's `intelligence_index` field (currently v5). Models with `intelligence_score_provisional: true` carry an estimate because AA hasn't measured them on that version yet; `null` means unscored. Models are sorted by this score by default.
+
 ## Data freshness
 
 Last audited: 2026-11-07

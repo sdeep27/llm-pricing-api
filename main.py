@@ -73,7 +73,7 @@ def get_models(
     key_fn = sort_keys.get(sort, sort_keys["intelligence"])
     models = sorted(models, key=key_fn, reverse=(order == "desc"))
 
-    return {"models": models, "count": len(models)}
+    return {"models": models, "count": len(models), "intelligence_index": data.get("intelligence_index")}
 
 
 @app.get("/api/meta")
@@ -85,6 +85,7 @@ def get_meta(request: Request):
         "last_updated": data["last_updated"],
         "price_unit": data["price_unit"],
         "sources": data["sources"],
+        "intelligence_index": data.get("intelligence_index"),
         "provider_count": 4,
         "model_count": len(data["models"]),
     }
