@@ -3,24 +3,19 @@
 # Runs the headless Claude Code audit and sends a Telegram alert on failure,
 # so an auth expiry (or any silent failure) surfaces in days, not a month.
 #
-# Auth:      CLAUDE_CODE_OAUTH_TOKEN, sourced from .audit.env (chmod 600, gitignored).
-#            Regenerate with `claude setup-token` when it eventually expires (~1yr).
-# Alerting:  TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID, reused from the wf-redux .env.
+# Secrets:   all in .audit.env next to this script (chmod 600, gitignored):
+#            CLAUDE_CODE_OAUTH_TOKEN  (regenerate with `claude setup-token` if it expires)
+#            ARTIFICIAL_ANALYSIS_KEY  (intelligence scores, see check-pricing step 2a)
+#            TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID  (failure alerts)
 set -uo pipefail
 
-APP_DIR="/home/deep/apps/llm-pricing-api"
-CLAUDE_BIN="/home/deep/.local/bin/claude"
+APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLAUDE_BIN="$(command -v claude)"   # cron's PATH must include claude's install dir
 LOG="$APP_DIR/logs/pricing-check_$(date +%F).log"
 cd "$APP_DIR" || exit 1
 
 # --- credentials -----------------------------------------------------------
-# Long-lived OAuth token for headless auth.
 [ -f "$APP_DIR/.audit.env" ] && set -a && . "$APP_DIR/.audit.env" && set +a
-# Telegram creds (reused from the daily-status cron's env).
-if [ -f /home/deep/apps/wf-redux/consumers/.env ]; then
-  TELEGRAM_BOT_TOKEN=$(grep -E '^TELEGRAM_BOT_TOKEN=' /home/deep/apps/wf-redux/consumers/.env | cut -d= -f2-)
-  TELEGRAM_CHAT_ID=$(grep -E '^TELEGRAM_CHAT_ID=' /home/deep/apps/wf-redux/consumers/.env | cut -d= -f2-)
-fi
 
 alert() {
   local msg="$1"
