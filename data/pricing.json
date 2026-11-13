@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10T14:00:07Z",
+  "last_updated": "2026-11-13T14:00:11Z",
   "price_unit": "per_million_tokens",
   "sources": {
     "pricing": {
@@ -241,6 +241,34 @@
       "cache_read_price": 0.10,
       "batch_input_price": 1.00,
       "batch_output_price": 5.00,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
+    },
+    {
+      "name": "Gemini 4 Carbon",
+      "provider": "google",
+      "intelligence_score": 60,
+      "input_price": 2.00,
+      "output_price": 10.00,
+      "context_window": 1000000,
+      "max_output": null,
+      "cache_read_price": 0.10,
+      "batch_input_price": 1.00,
+      "batch_output_price": 5.00,
+      "search_price": 0.014,
+      "search_free_tier": "5K free/mo"
+    },
+    {
+      "name": "Gemini 4 Hydrogen",
+      "provider": "google",
+      "intelligence_score": 53.9,
+      "input_price": 1.50,
+      "output_price": 7.50,
+      "context_window": 1000000,
+      "max_output": null,
+      "cache_read_price": 0.075,
+      "batch_input_price": 0.75,
+      "batch_output_price": 3.75,
       "search_price": 0.014,
       "search_free_tier": "5K free/mo"
     },
